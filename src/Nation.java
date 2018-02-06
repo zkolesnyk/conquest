@@ -29,6 +29,9 @@ public class Nation {
 
     }
 
+    static Nation nation1;
+    static Nation nation2;
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String tempString;
@@ -36,11 +39,11 @@ public class Nation {
         System.out.println("Добро пожаловать в игру Завоевание!");
         System.out.println("Игрок 1, введи своё имя: ");
         tempString = in.next();
-        Nation nation1 = new Nation(tempString);
+        nation1 = new Nation(tempString);
 
         System.out.println("Игрок 2, введи своё имя: ");
         tempString = in.next();
-        Nation nation2 = new Nation(tempString);
+        nation2 = new Nation(tempString);
 
         while (nation1.takeTurn() && nation2.takeTurn()) {
 
@@ -56,8 +59,7 @@ public class Nation {
 
         menu();
 
-        if (nation1.land <= 0 || nation2.land <= 0) return false;
-        return true;
+        return nation1.land > 0 && nation2.land > 0;
     }
 
     private void menu() {

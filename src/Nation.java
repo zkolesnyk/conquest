@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Nation {
-    public int land;
-    public int troops;
+    private int land;
+    private int troops;
 
     private String name;
 
@@ -13,7 +13,7 @@ public class Nation {
     private int merchants;
     private int blacksmiths;
 
-    public Nation(String name) {
+    private Nation(String name) {
         this.name = name;
         land = 20;
         food = 50;
@@ -29,8 +29,8 @@ public class Nation {
 
     }
 
-    static Nation nation1;
-    static Nation nation2;
+    private static Nation nation1;
+    private static Nation nation2;
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -50,7 +50,7 @@ public class Nation {
         }
     }
 
-    public boolean takeTurn() {
+    private boolean takeTurn() {
         System.out.println(String.format("Ход %s", name));
         people += land * 0.2;
         food += farmers - people * 0.25;
